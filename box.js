@@ -10,7 +10,7 @@ class Box
          //remeber to set density for polygon, if setting density for box.  
         }
 
-        this.visibility = 225
+        
         this.body=Bodies.rectangle(x,y,30,40,options);
         World.add(world,this.body)
         this.color=c
@@ -31,14 +31,9 @@ class Box
         pop()
         }
         else{
-
+            
             World.remove(world,this.body)
-            push()
-            
-            this.visibility = this.visibility -5;
-            
-
-            pop()
+           
         } 
     }
 }
