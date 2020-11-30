@@ -31,7 +31,7 @@ class Sling
         {
         stroke("white")
         strokeWeight(3)
-        line(this.sling.bodyA.position.x,this.sling.bodyA.position.y,this.pointB.x,this.pointB.y)
+        line(this.sling.bodyA.position.x,this.sling.bodyA.position.y,this.sling.pointB.x,this.sling.pointB.y)
     }
 }
 }

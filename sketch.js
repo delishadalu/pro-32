@@ -14,25 +14,25 @@ function setup() {
   ground2= new Ground(970,350,210,10)
   ground3= new Ground(570,550,270,10)
 
-box1= new Box(490,510,"skyblue")
-box2= new Box(520,510,"skyblue")
-box3= new Box(550,510,"skyblue")
-box4= new Box(580,510,"skyblue")
-box5= new Box(610,510,"skyblue")
-box6= new Box(640,510,"skyblue")
-box7= new Box(670,510,"skyblue")
+box1= new Box(490,530,"skyblue")
+box2= new Box(520,530,"skyblue")
+box3= new Box(550,530,"skyblue")
+box4= new Box(580,530,"skyblue")
+box5= new Box(610,530,"skyblue")
+box6= new Box(640,530,"skyblue")
+box7= new Box(670,530,"skyblue")
 
-box8= new Box(520,470,"pink")
-box9= new Box(550,470,"pink")
-box10= new Box(580,470,"pink")
-box11= new Box(610,470,"pink")
-box12= new Box(640,470,"pink")
+box8= new Box(520,490,"pink")
+box9= new Box(550,490,"pink")
+box10= new Box(580,490,"pink")
+box11= new Box(610,490,"pink")
+box12= new Box(640,490,"pink")
 
-box13= new Box(550,430,"green")
-box14= new Box(580,430,"green")
-box15= new Box(610,430,"green")
+box13= new Box(550,450,"green")
+box14= new Box(580,450,"green")
+box15= new Box(610,450,"green")
 
-box16= new Box(580,390,"gray")
+box16= new Box(580,410,"gray")
 
 box17= new Box(900,320,"pink")
 box18= new Box(930,320,"pink")
@@ -101,8 +101,9 @@ function draw() {
  drawSprites();
 
  slings.display()
- textSize(50)
+ textSize(25)
  text(mouseX+";"+mouseY,mouseX,mouseY)
+ text("press space, for a second chance",180,57)
 }
 
 function mouseDragged()
