@@ -9,9 +9,10 @@ class Ground
     }
 
     display()
-    {
+    {push ()
         rectMode(CENTER)
         fill("brown")
         rect(this.body.position.x,this.body.position.y,this.width,this.height)
+    pop ()
     }
 }

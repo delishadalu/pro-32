@@ -4,6 +4,9 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint= Matter.Constraint;
 
+var score=0;
+var backgroundImage
+
 function setup() {
   createCanvas(1200,800);
   engine = Engine.create();
@@ -53,6 +56,9 @@ polygonimg=loadImage("polygon.png")
 
 slings= new Sling(this.polygon,{x:200,y:350})
 
+backgroundImage= loadImage("sprites/day.jpg")
+getbackgroundImage();
+
   Engine.run(engine);
 }
 
@@ -60,6 +66,7 @@ function draw() {
   
   background(0);  
   
+ 
   ground1.display()
   ground2.display()
   ground3.display()
@@ -96,11 +103,34 @@ function draw() {
   box25.display()
  image (polygonimg,polygon.position.x,polygon.position.y,40,40) 
 
-
-
+box1.score()
+box2.score()
+box3.score()
+box4.score()
+box5.score()
+box6.score()
+box7.score()
+box8.score()
+box9.score()
+box10.score()
+box11.score()
+box12.score()
+box13.score()
+box14.score()
+box15.score()
+box16.score()
+box17.score()
+box18.score()
+box19.score()
+box20.score()
+box21.score()
+box22.score()
+box23.score()
+box24.score()
+text("score: "+score,750,40)
  drawSprites();
 
- slings.display()
+ slings.display();
  textSize(25)
  text(mouseX+";"+mouseY,mouseX,mouseY)
  text("press space, for a second chance",180,57)
@@ -124,6 +154,25 @@ function keyPressed()
     slings.attach(this.polygon)
   }
 }
+
+async function getbackgroundImage()
+{
+  var response= await fetch ("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+  var responsejson= await response.json();
+
+  var time=responsejson.datetime.slice(11,13);
+
+  if (time>=6 && time<= 18)
+  {
+    backgroundImage= loadImage("sprites/day.jpg")
+
+  }
+  else
+  {
+    backgroundImage= loadImage("sprites/n8.jpg")
+  }
+}
+
 
 
 
