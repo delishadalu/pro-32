@@ -64,7 +64,7 @@ getbackgroundImage();
 
 function draw() {
   
-  background(0);  
+  background(backgroundImage);  
   
  
   ground1.display()
