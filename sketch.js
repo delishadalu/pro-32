@@ -6,7 +6,12 @@ const Constraint= Matter.Constraint;
 
 var score=0;
 var backgroundImage
+function  preload(){
 
+  polygonimg=loadImage("polygon.png")
+  backgroundImage= loadImage("sprites/n8.jpg")
+  
+}
 function setup() {
   createCanvas(1200,800);
   engine = Engine.create();
@@ -52,20 +57,24 @@ box25= new Box(960,240,"skyblue")
 polygon=Bodies.circle(200,420,20,{density:1})
 World.add(world,polygon)
 imageMode (CENTER)
-polygonimg=loadImage("polygon.png")
+
 
 slings= new Sling(this.polygon,{x:200,y:350})
 
-backgroundImage= loadImage("sprites/day.jpg")
+
 getbackgroundImage();
+
+bg = createSprite(width/2,height/2,width, height)
+
 
   Engine.run(engine);
 }
 
 function draw() {
-  
-  background(backgroundImage);  
-  
+  drawSprites();
+  //background(backgroundImage);  
+  bg.addImage(backgroundImage)
+backgroundImage.resize(displayWidth, displayHeight)
  
   ground1.display()
   ground2.display()
@@ -127,13 +136,15 @@ box21.score()
 box22.score()
 box23.score()
 box24.score()
-text("score: "+score,750,40)
- drawSprites();
+
+ 
 
  slings.display();
  textSize(25)
+ stroke('red')
  text(mouseX+";"+mouseY,mouseX,mouseY)
  text("press space, for a second chance",180,57)
+ text("score: "+score,750,40)
 }
 
 function mouseDragged()
@@ -171,7 +182,7 @@ async function getbackgroundImage()
   {
     backgroundImage= loadImage("sprites/n8.jpg")
   }
-}
+}//
 
 
 
